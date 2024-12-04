@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #141e30, #243b55);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f, #fdbb2d);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        header ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #fdbb2d;
+            bottom: -3px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        header ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fdbb2d;
+            transform: scale(1.2);
+        }
+
+        /* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #d6eeee, #30a8cd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* About Section */
+	.about {
+   	    padding: 4rem 2rem;
+   	    background: linear-gradient(to top, #243b55, #141e30); /* Matching gradient */
+  	    color: white;
+	}
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #243b55, #141e30);
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio .project {
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio .project h3 {
+            margin: 1rem;
+            font-size: 1.2rem;
+            color: #fdbb2d;
+        }
+
+        .portfolio .project p {
+            margin: 0 1rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .portfolio .project:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 1rem;
+            background: #141e30;
+            text-align: center;
+            color: #aaa;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(to top, #243b55, #141e30);
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact form a {
+            display: block;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            color: white;
+            font-size: 1rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact form a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f, #fdbb2d);
+            font-size: 0.9rem;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1>LETICIA KEEVA ARETTA</h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/leticia-keeva-aretta" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/leticia.keeva/profilecard/?igsh=a3VrNmI3YWRpZjRr" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/dendeng_lebah?t=fjvGp5CexnTJ6IvQJvvmXw&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/LettyAretta/" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h2>Welcome to My Portfolio!</h2>
+        <p>Discover a fusion of creativity, precision, and innovation crafted to inspire and ignite possibilities.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            Hi, my name is Leticia Keeva Aretta. I am a college student from Pradita University. My traits are that I am diligent and thorough at my work. I bring a strong work ethic, attention to detail, and excellent interpersonal skills.
+        </p>
+    </section>
+
+    <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <img src="toko.png" alt="Project 1">
+            <h3>Website Development: Online Shop</h3>
+            <p>This project involved designing and developing a responsive online shop using Java. The website features a clean user interface with interactive product listings, a shopping cart, and a checkout system. The design ensures seamless navigation and optimal performance across different devices.</p>
+        </div>
+        <div class="project">
+	<a href="https://photos.google.com/share/AF1QipPH6vEOwU0BiRjvLguZDQnH7qRCZh3Qo-vYMF_tlaS_D_MorinVp-MxixBcU-ETXw?pli=1&key=bkhBb1FvelM3T1hkZF9iMTFqQjlXYzRZdEEwTUV3">
+            <img src="stroketor.jpg" alt="Stroke Monitor Project">
+            <h3>Mobile App Development: Stroketor</h3>
+	</a>
+            <p>Stroke Monitor is a conceptual application designed to assist stroke patients in tracking their therapy progress while providing essential health-related information. This application is part of a Business Idea competition, showcasing innovative solutions in the healthcare sector. Currently, the project remains in the design phase and has not yet progressed to full development.</p>
+        </div>
+        <div class="project">
+	<a href="https://drive.google.com/file/d/1M7vh_Obat4U788Pwde1SyK-3K4eHN9eJ/view?usp=drive_link">
+            <img src="ldr.jpg" alt="Light Control Project">
+            <h3>ESP WROOM 32 Project: Light Control</h3>
+	</a>
+            <p>This project uses an LDR (Light Dependent Resistor) with the ESP32 to control an LED based on ambient light levels. The ESP32 reads the LDR's light intensity and turns the LED on or off depending on whether the light level exceeds a set threshold. This simple automation showcases the use of the ESP32 for real-time light monitoring and LED control.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <a href="mailto:leticia.keeva@student.pradita.ac.id">Send Me an Email</a>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Leticia Keeva Aretta. All Rights Reserved.
+    </footer>
+</body>
+</html>
