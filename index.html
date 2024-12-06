@@ -177,6 +177,53 @@
             transform: scale(1.05);
         }
 
+        /* Volunteer Section */
+        .volunteer {
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #243b55, #141e30);
+        }
+
+        .volunteer h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .volunteer .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer .project {
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .volunteer .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .volunteer .project h3 {
+            margin: 1rem;
+            font-size: 1.2rem;
+            color: #fdbb2d;
+        }
+
+        .volunteer .project p {
+            margin: 0 1rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .volunteer .project:hover {
+            transform: scale(1.05);
+        }
+
         /* Footer */
         footer {
             padding: 1rem;
@@ -331,13 +378,13 @@
 </section>
 
 <section id="volunteer" class="volunteer">
-    <h2>Volunteers</h2>
+    <h2>Volunteering</h2>
     <div class="volunteer">
     <a href="https://brainly.co.id/app/profile/23007212/answers">
         <div class="volunteer">
             <img src="brainly.png" alt="Online Math Tutor">
             <h3>Online Math Tutor (Brainly Indonesia)</h3>
-    </a>
+   </a>
             <ul>
 		<li>Providing high-quality and easily understandable answers for users.</li>
 		<li>Answered a total of 574 questions, with 504 specifically being mathematics-related.</li>
