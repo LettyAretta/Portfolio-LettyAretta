@@ -123,51 +123,55 @@
         }
 
         /* Portfolio Section */
-        .portfolio {
-            padding: 4rem 2rem;
-            background: linear-gradient(to bottom, #243b55, #141e30);
-        }
+.portfolio-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
 
-        .portfolio h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+.portfolio-card {
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    color: white;
+}
 
-        .portfolio .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+.portfolio-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
 
-        .portfolio .project {
-            background: linear-gradient(to bottom, #1e3c72, #2a5298);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.portfolio-card h3 {
+    font-size: 1.3rem;
+    color: #fdbb2d;
+    margin-bottom: 0.5rem;
+}
 
-        .portfolio .project img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+.portfolio-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
 
-        .portfolio .project h3 {
-            margin: 1rem;
-            font-size: 1.2rem;
-            color: #fdbb2d;
-        }
+.portfolio-card a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .portfolio .project p {
-            margin: 0 1rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        .portfolio .project:hover {
-            transform: scale(1.05);
-        }
+.portfolio-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
+}
 	    
 	/* Volunteering Section */
 	.volunteer {
@@ -351,34 +355,34 @@
     <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio">
     <h2>My Projects</h2>
-    <div class="projects">
-        <div class="project">
+    <div class="portfolio-cards">
+        <div class="portfolio-card">
             <img src="toko.png" alt="Online Shop Project">
             <h3>Website Development: Responsive Online Shop with XAMPP Integration</h3>
             <p>This project involved designing and developing a responsive online shopping platform using Java and XAMPP for database management. The website features a user-friendly interface with dynamic product listings, an interactive shopping cart, and a secure checkout system.</p>
         </div>
-        <div class="project">
+        <div class="portfolio-card">
 	<a href="https://photos.google.com/share/AF1QipPH6vEOwU0BiRjvLguZDQnH7qRCZh3Qo-vYMF_tlaS_D_MorinVp-MxixBcU-ETXw?pli=1&key=bkhBb1FvelM3T1hkZF9iMTFqQjlXYzRZdEEwTUV3">
             <img src="stroketor.jpg" alt="Stroke Monitor Project">
             <h3>Mobile App Design: Stroketor</h3>
 	</a>
             <p>Stroke Monitor is a conceptual application designed to assist stroke patients in tracking their therapy progress while providing essential health-related information. This application is part of a Business Idea competition, showcasing innovative solutions in the healthcare sector. Currently, the project remains in the design phase and has not yet progressed to full development.</p>
         </div>
-        <div class="project">
+        <div class="portfolio-card">
 	<a href="https://drive.google.com/file/d/1M7vh_Obat4U788Pwde1SyK-3K4eHN9eJ/view?usp=drive_link">
             <img src="ldr.jpg" alt="Light Control Project">
             <h3>ESP WROOM 32 Project: Light Control</h3>
 	</a>
             <p>This project uses an LDR (Light Dependent Resistor) with the ESP32 to control an LED based on ambient light levels. The ESP32 reads the LDR's light intensity and turns the LED on or off depending on whether the light level exceeds a set threshold. This simple automation showcases the use of the ESP32 for real-time light monitoring and LED control.</p>
         </div>
-	<div class="project">
+	<div class="portfolio-card">
 	<a href="https://cbt-leticia.vercel.app/">
             <img src="exam.png" alt="Computer Based Test Project">
             <h3>Website Design: Computer Based Test</h3>
 	</a>
             <p>This project involved designing and developing a responsive Computer Based Test (CBT) using HTML, CSS, and JavaScript. The application features a clean user interface with interactive question navigation, a timer, and an automated scoring system. The design ensures seamless usability and optimal performance across different devices.</p>
         </div>
-        <div class="project">
+        <div class="portfolio-card">
 	<a href="https://drive.google.com/file/d/1yiuru5-OLZEWG-TmwQ0BzhFQSVPQh_HX/view?usp=sharing">
             <img src="pondoksegar.png" alt="Pondok Segar Project">
             <h3>Promotional Video: Pondok Segar</h3>
